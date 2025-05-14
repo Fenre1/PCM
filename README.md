@@ -24,7 +24,7 @@ PCM implements the Post‑Clustering Merging (PCM) algorithm for refining overcl
 
 ```python
 import numpy as np
-from pcm_merge import pcm
+from PCM import pcm
 
 # labels: 1D array of initial cluster IDs
 # embeddings: 2D feature matrix
