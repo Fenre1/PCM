@@ -40,7 +40,7 @@ print(new_labels)
 
 
 ```python
-from PCM.metrics import pjss, lds, harmonic_mean
+from PCM.eval_measures import pjss, lds, harmonic_mean
 
 # Suppose `clusters` is a list of clusters (list of sample indices)
 # and `label_sets` is a list of ground‑truth label sets per sample
