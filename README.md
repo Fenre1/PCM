@@ -3,7 +3,7 @@ PCM implements the Post‑Clustering Merging (PCM) algorithm for refining overcl
 
 ## Features
 
-- PCM algorithm (PCM.pcm):
+- **PCM algorithm (PCM.pcm)**:
 
   - Takes an existing clustering (labels + feature embeddings) and merges similar clusters based on centroid similarity and neighbor overlap.
 
@@ -13,10 +13,10 @@ PCM implements the Post‑Clustering Merging (PCM) algorithm for refining overcl
 
 - Evaluation measures:
 
-  - Supports multi-label data: Unlike most common clustering metrics that assume each item has only one true label, PJSS and LDS can evaluate clustering quality when each datapoint may have one or more labels.
-  - Pairwise Jaccard Similarity Score (PJSS): average Jaccard index over all label-set pairs within a cluster, measuring cluster quality.
+  - **Supports multi-label data**: Unlike most common clustering metrics that assume each item has only one true label, PJSS and LDS can evaluate clustering quality when each datapoint may have one or more labels.
+  - **Pairwise Jaccard Similarity Score (PJSS)**: average Jaccard index over all label-set pairs within a cluster, measuring cluster quality.
 
-  - Label Distribution Score (LDS): rewards concentrating occurrences of each label in as few clusters as possible, measuring cluster efficiency.
+  - **Label Distribution Score (LDS)**: rewards concentrating occurrences of each label in as few clusters as possible, measuring cluster efficiency.
 
   - Harmonic mean of PJSS and LDS to balance quality vs. efficiency.
  
@@ -52,11 +52,10 @@ print(f"PJSS={pjss_score:.3f}, LDS={lds_score:.3f}, harmonic={hmean:.3f}")
 ```
 
 # Defaults & Recommendations
-
-- Default thresholds (found via grid search on multiple image collections):
-
+- **Initial clustering**:
+  - Use k-means with *k* set to about 10× the expected number of clusters. Overclustering helps PCM better optimize the clustering results.
+- **Recommended initial thresholds**:
   - sim_threshold = 0.6
-
   - jaccard_threshold = 0.1
 
 These defaults work well out of the box, but you can tune them to control the balance between merging aggressiveness (efficiency) and preserving cluster purity (quality).
