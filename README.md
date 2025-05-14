@@ -54,6 +54,7 @@ print(f"PJSS={pjss_score:.3f}, LDS={lds_score:.3f}, harmonic={hmean:.3f}")
 # Defaults & Recommendations
 - **Initial clustering**:
   - Use k-means with *k* set to about 10× the expected number of clusters. Overclustering helps PCM better optimize the clustering results.
+  - PCM can be used without initial clustering, but is then fairly slow and not as good as k-means + PCM.
 - **Recommended initial thresholds**:
   - sim_threshold = 0.6
   - jaccard_threshold = 0.1
